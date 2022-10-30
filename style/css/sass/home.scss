@@ -1,0 +1,102 @@
+$barmoqrang:#3f8dec;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $barmoqrang;
+}
+.flex{
+    display: flex;
+    align-items: center;
+    gap:0.5em;
+}
+.barmoqlar{
+    width: 60px;
+    height:var(--barmoq);
+    border-radius:20px;
+    background-color: #eee;
+    position: relative;
+    animation-delay:var(--time);
+    animation-duration:1.5s;
+    animation-name:barmoqlar;
+    animation-iteration-count: infinite;
+
+    &::before{
+    content:"";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color:$barmoqrang; 
+    top:var(--nan) ;
+    transform: translateX(25%);
+    border-radius: 25px 25px 15px 15px;
+    }
+}
+
+    .top {
+      width: 35px;
+      height: 5px;
+      background-color:$barmoqrang;
+      position: absolute;
+      left: 21%;
+      top: 20px;
+      &::before {
+        content: "";
+        width: 35px;
+        height: 5px;
+        background-color:$barmoqrang;
+        position: absolute;
+
+        top: 12px;
+      }
+    }
+    .aylan {
+      width: 80px;
+      height: 60px;
+      background-color: #eee;
+      border-radius: 0 30px 80px 0;
+      position: relative;
+      animation-delay: var(--time);
+      animation-duration:1.5s;
+      animation-name:aylan;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      &::before {
+        content: "";
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        background-color: #eee;
+
+        top: -30px;
+
+      }
+      &::after{
+        content: "";
+        background:$barmoqrang;
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        top: -50px;
+        border-radius: 20px 20px 0px 80px;
+      }
+    }
+
+     @keyframes barmoqlar {
+       to {
+         top: -30px;
+       }
+     }
+     @keyframes aylan {
+         to{
+            transform: rotateY(-5deg);
+            top: -10px  
+         }
+     }
